@@ -1,0 +1,12 @@
+---
+  - name: show ip bgp summary
+    hosts: all
+    gather_facts: no
+    connection: network_cli
+    tasks:
+      - name: run show ip bgp summary
+        ios_command:
+          commands: show ip bgp summary
+        register: show_ip_bgp_summary_result
+      - name: Debug registered var
+        debug: var=show_ip_bgp_summary_result.stdout_lines

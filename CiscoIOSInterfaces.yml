@@ -5,6 +5,7 @@
     connection: network_cli
     tasks:
       - name: Run show ip int brief
+        ignore_warnings: True
         ios_command:
           commands: show ip int brief
         register: sh_ip_int_br_result

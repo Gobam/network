@@ -8,7 +8,5 @@
         ios_command:
           commands: show ip int brief
         register: sh_ip_int_br_result
-        args:
-          warn: false
       - name: Debug registered var
         debug: var=sh_ip_int_br_result.stdout_lines

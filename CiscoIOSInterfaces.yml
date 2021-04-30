@@ -5,9 +5,9 @@
     connection: network_cli
     tasks:
       - name: Run show ip int brief
-        ignore_warnings: True
         ios_command:
           commands: show ip int brief
+        ignore_warnings: True
         register: sh_ip_int_br_result
       - name: Debug registered var
         debug: var=sh_ip_int_br_result.stdout_lines
